@@ -45,7 +45,7 @@ public class Main2Activity extends AppCompatActivity {
         }
         SipProfile.Builder builder = null;
         try {
-            builder = new SipProfile.Builder("7001", "192.168.0.122");
+            builder = new SipProfile.Builder("7001", "192.168.0.121");
             builder.setPassword("123");
             sipProfile = builder.build();
 
@@ -113,7 +113,7 @@ public class Main2Activity extends AppCompatActivity {
             }
         };
         try {
-            sipManager.makeAudioCall(sipProfile.getUriString(), "7002@192.168.0.122", listener, 30);
+            sipManager.makeAudioCall(sipProfile.getUriString(), "7002@192.168.0.121", listener, 30);
         } catch (SipException e) {
             e.printStackTrace();
         }

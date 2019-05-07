@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/main_layout"
+        android:background="@drawable/circle_add_lead"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -15,7 +16,10 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_marginBottom="55dp"
+            android:textColor="@color/theme_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
@@ -24,31 +28,36 @@
             android:id="@+id/unregister"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/theme_color"
+            android:inputType="textPersonName"
             android:text="Unregister"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register" />
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="@+id/registerSIP"
+            app:layout_constraintStart_toStartOf="@+id/registerSIP" />
 
         <EditText
             android:id="@+id/auth"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/white"
             android:ems="10"
             android:hint="Username"
             android:inputType="textPersonName"
+            android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintWidth_percent=".75" />
 
         <TextView
             android:id="@+id/textView2"
@@ -60,9 +69,9 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="Register SIP"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
+            android:textColor="@color/theme_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -74,7 +83,10 @@
             android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="Server domain "
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/white"
             android:inputType="textPersonName"
+            android:padding="15dp"
             app:layout_constraintEnd_toEndOf="@+id/auth"
             app:layout_constraintStart_toStartOf="@+id/auth"
             app:layout_constraintTop_toBottomOf="@+id/auth" />
@@ -86,25 +98,34 @@
             android:layout_marginTop="16dp"
             android:ems="10"
             android:hint="password"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/server"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/white"
+            android:inputType="textWebPassword"
+            android:padding="15dp"            app:layout_constraintEnd_toEndOf="@+id/server"
             app:layout_constraintStart_toStartOf="@+id/server"
             app:layout_constraintTop_toBottomOf="@+id/server" />
 
         <Button
-            android:id="@+id/register"
+            android:id="@+id/registerSIP"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="@color/theme_color"
+            android:inputType="textPersonName"
             android:text="Register"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toTopOf="@+id/unregister"
             app:layout_constraintEnd_toEndOf="@+id/pass"
-            app:layout_constraintStart_toStartOf="@+id/pass"
-            app:layout_constraintTop_toBottomOf="@+id/pass" />
+            app:layout_constraintStart_toStartOf="@+id/pass" />
     </android.support.constraint.ConstraintLayout>
 
     <include
         android:id="@+id/call_layout"
-        layout="@layout/activity_call"
+        layout="@layout/calling_screen"
         android:visibility="gone" />
 
 </android.support.constraint.ConstraintLayout>

@@ -25,8 +25,6 @@ public class CallActivity extends AppCompatActivity {
         setContentView(R.layout.activity_call);
      /*   sipProfile = (SipProfile) getIntent().getSerializableExtra("sip_profile");
         sipManager = (SipManager) getIntent().getSerializableExtra("sip_manager");*/
-        makecall = (Button)findViewById(R.id.makecall);
-        endcall = (Button)findViewById(R.id.endcall);
         peer = (EditText) findViewById(R.id.peer);
 
         makecall.setOnClickListener(new View.OnClickListener() {

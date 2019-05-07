@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">@color/theme_color</color>
+    <color name="colorPrimaryDark">@color/theme_color</color>
+    <color name="colorAccent">@color/theme_color</color>
+    <color name="darkorchid">#9932CC</color>
+    <color name="color2">#e88a1a</color>
+    <color name="color4">#1c819e</color>
+    <color name="success_color">#00C851</color>
+    <color name="theme_color">#eb384f</color>
+    <color name="card_header">@color/input_border</color>
+    <color name="input_border">#9b9b9b</color>
+    <color name="palegray">#f5f6f9</color>
+    <color name="bluecolor">#23b6f9</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black_theme_text">#3f3f3f</color>
+    <color name="green">#62bd3a</color>
+    <color name="dialpadblue">#2378bb</color>
+    <color name="error_text">#e35757</color>
+    <color name="line_color">#d8d8d8</color>
+    <color name="default_textview">#757575</color>
+    <color name="error_bg">#ffeded</color>
+    <color name="yellow">#fecf33</color>
+    <color name="transparent">#00000000</color>
+    <color name="blue">#4b5d73</color>
+
 </resources>
