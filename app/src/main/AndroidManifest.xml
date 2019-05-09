@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <uses-feature
         android:name="android.software.sip"
@@ -36,17 +37,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main2Activity">
+        <receiver
+            android:name=".MyCallReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
 
-        </activity>
-        <activity android:name=".CallActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".IncomingActivity" />
+
+        <service
+            android:name=".MyForeGroundService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ServiceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".CallActivity" />
+        <activity android:name=".MainActivity" />
 
         <receiver
             android:name=".IncomingCallReceiver"

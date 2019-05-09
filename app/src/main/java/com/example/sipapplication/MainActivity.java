@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -42,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
     String username, serverdomain, password, receiver;
     private Button register, unregister;
     private EditText auth, server, pass;
-    private ConstraintLayout call_layout, main_layout;
+    public ConstraintLayout call_layout, main_layout, incoming_layout;
     private TextView caller_name_number;
     private Chronometer call_timer;
-    private ImageButton hang_up, loudspeaker, mute;
+    private ImageButton hang_up, loudspeaker, mute, hangUp, answerCall;
     String[] PERMISSIONS = {Manifest.permission.INTERNET, Manifest.permission.READ_PHONE_STATE, Manifest.permission.WAKE_LOCK, Manifest.permission.CALL_PHONE, Manifest.permission.PROCESS_OUTGOING_CALLS, Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.RECORD_AUDIO, Manifest.permission.DISABLE_KEYGUARD, Manifest.permission.READ_CONTACTS, Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_CONTACTS, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.USE_SIP, Manifest.permission.MODIFY_AUDIO_SETTINGS};
 
     @Override
@@ -60,11 +61,20 @@ public class MainActivity extends AppCompatActivity {
         pass = (EditText) findViewById(R.id.pass);
         call_layout = (ConstraintLayout) findViewById(R.id.call_layout);
         main_layout = (ConstraintLayout) findViewById(R.id.main_layout);
+        incoming_layout = (ConstraintLayout) findViewById(R.id.incoming);
+
         caller_name_number = (TextView) findViewById(R.id.caller_name_number);
         call_timer = (Chronometer) findViewById(R.id.call_timer);
         hang_up = (ImageButton) findViewById(R.id.hang_up);
         loudspeaker = (ImageButton) findViewById(R.id.loudspeaker);
         mute = (ImageButton) findViewById(R.id.mute);
+        answerCall = (ImageButton) findViewById(R.id.answerCall);
+        hangUp = (ImageButton) findViewById(R.id.hangUp);
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("android.SipDemo.INCOMING_CALL");
+        callReceiver = new IncomingCallReceiver();
+        this.registerReceiver(callReceiver, filter);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

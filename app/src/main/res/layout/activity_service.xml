@@ -128,7 +128,8 @@
         layout="@layout/calling_screen"
         android:visibility="gone" />
 
-    <include android:id="@+id/incoming"
-        layout="@layout/incoming_call"
+    <include
+        android:id="@+id/dialscreen"
+        layout="@layout/activity_call"
         android:visibility="gone"/>
 </android.support.constraint.ConstraintLayout>

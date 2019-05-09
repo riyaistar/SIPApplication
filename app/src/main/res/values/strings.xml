@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SIPApplication</string>
+    <string name="shared_preference_key">SIPKey</string>
+
 </resources>
